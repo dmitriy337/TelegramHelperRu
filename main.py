@@ -19,18 +19,14 @@ import datetime
 #Вставьте ссылку с сайта https://sinoptik.ua/ с названием вашего города!
 city = 'https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D0%BC%D0%B5%D0%BB%D0%B8%D1%82%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C'
 
-
-import logging
- 
-logging.basicConfig(format = u'\n%(levelname)-8s [%(asctime)s] %(message)s ', level = logging.WARNING, filename = u'LogFileDmtr.log')
+api_id = Ваш id
+api_hash = 'Ваш хеш'
 
 
-api_id = 927949
-api_hash = '91bd7da0e9b1448d17bc21aaf09d5841'
+
+
 client = TelegramClient('anon', api_id, api_hash)
 client.start()
-
-# Печатаю текст
 
 
 headers = {
@@ -503,7 +499,8 @@ async def handler(event):
         print(e)
 
 
-# Сколько я живу и логи
+
+# Сколько я живу 
 async def update_bio():
     while True:
         delta = ((datetime.datetime.now() - datetime.datetime(2004, 3, 22))).days
@@ -514,9 +511,7 @@ async def update_bio():
         await client(UpdateProfileRequest(
             about=string
         ))
-        f = await client.send_file('me','LogFileDmtr.log')
         await asyncio.sleep(600)
-        await f.delete()
 
     
 try:
@@ -528,4 +523,5 @@ try:
     client.run_until_disconnected()
 finally:
     client.disconnect()
+
 
