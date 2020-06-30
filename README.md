@@ -18,6 +18,8 @@ Telegram bot on telethon.
         
         sudo pip3 install os
         
+        sudo pip3 install bs4
+        
         sudo pip3 install requests
         
 Для работы на windows выполнить:
@@ -25,6 +27,8 @@ Telegram bot on telethon.
         pip3 install telethon
         
         pip3 install pyttsx3
+        
+        pip3 install bs4
         
         pip3 install  gTTS
         
